@@ -1,8 +1,4 @@
 #!/bin/bash
-#STREAM
-#DESCRIPTION:
-#The STREAM benchmark is a simple synthetic benchmark program that measures sustainable memory bandwidth (in MB/s) and the corresponding computation rate for simple vector kernels.  
-#DATE:2012/06/07
 
 set -x
 mkdir -p results
