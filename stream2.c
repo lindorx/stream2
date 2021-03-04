@@ -39,7 +39,7 @@ int main()
     double exp1, tdelta;
     char ALLTIMES = 0;
     register int i, j, k, l, M;
-
+#pragma omp parallel for
     for (i = 0; i < MIN(10000, NMAX); ++i)
     {
         a[i] = 0.0e0;
@@ -63,6 +63,7 @@ int main()
         exp1 = log10((double)NMIN) + (double)(j) / (double)(NUMSIZES - 1) *
                                          (log10((double)(NMAX)) - log10((double)(NMIN)));
         M = (unsigned int)(pow((double)10, exp1));
+#pragma omp parallel for
         for (i = 0; i < M; ++i)
         {
             a[i] = 0.0e0;
@@ -97,7 +98,7 @@ void s_fill(int k, int i, int M)
 {
     int l;
     start = mysecond();
-
+#pragma omp parallel for
     for (l = 0; l < inner; ++l)
     {
         scalar = (double)(k + l + 1);
@@ -114,6 +115,7 @@ void s_copy(int k, int i, int M)
 {
     int l;
     start = mysecond();
+#pragma omp parallel for
     for (l = 0; l < inner; ++l)
     {
         a[l] = 1.0e0;
@@ -130,6 +132,7 @@ void s_daxpy(int k, int i, int M)
 {
     int l;
     start = mysecond();
+#pragma omp parallel for
     for (l = 0; l < inner; ++l)
     {
         a[l] = 1.0e0;
@@ -147,6 +150,7 @@ void s_dot(int k, int i, int M)
     int l;
     double sum0, sum1, sum2, sum3, sum4, sum5, sum6, sum7;
     start = mysecond();
+#pragma omp parallel for
     for (l = 0; l < inner; ++l)
     {
         b[l] = 1.0e0;
