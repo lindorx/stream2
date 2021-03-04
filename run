@@ -1,6 +1,5 @@
 #!/bin/bash
 
-set -x
 mkdir -p results
 
 CMD=./stream2
