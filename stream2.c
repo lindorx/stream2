@@ -4,7 +4,7 @@
 #include <sys/time.h>
 
 #define NMIN 30
-#define NMAX 25000000
+#define NMAX 2000000
 #define NTIMES 10
 #define NUMSIZES 32
 #define NPAD 5
